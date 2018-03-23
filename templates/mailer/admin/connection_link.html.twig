@@ -1,0 +1,8 @@
+{% extends 'mailer/layout.html.twig' %}
+
+{% trans_default_domain 'mailer' %}
+
+{% block content %}
+    <p>Click on the link below for connection...</p>
+    <a href="{{ url('connect',  { token: token }) }}">Here !!</a>
+{% endblock %}

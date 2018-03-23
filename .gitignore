@@ -1,0 +1,10 @@
+###> symfony/framework-bundle ###
+.env
+/public/bundles/
+/var/
+/vendor/
+###< symfony/framework-bundle ###
+
+.led/
+docker-compose.yml
+.env.dist

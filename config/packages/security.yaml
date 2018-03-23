@@ -1,0 +1,21 @@
+security:
+    # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
+    providers:
+        administrator:
+            entity: { class: App\Entity\User, property: email }
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        default:
+            pattern: "/"
+            anonymous: true
+            provider: administrator
+            logout:
+                path: "logout"
+                target: "login"
+
+    access_control:
+        - { path: "^/secured", roles: IS_AUTHENTICATED_REMEMBERED }
+        - { path: "^/", roles: IS_AUTHENTICATED_ANONYMOUSLY }
