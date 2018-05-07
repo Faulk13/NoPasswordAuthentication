@@ -7,4 +7,3 @@
 
 .led/
 docker-compose.yml
-.env.dist
