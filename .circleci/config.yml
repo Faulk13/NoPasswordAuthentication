@@ -7,12 +7,6 @@ jobs:
         steps:
             - checkout
             - run:
-                name: 'Setup environment'
-                command: |
-                    cp .env.dist .env
-                    sed -i "/CURRENT_UID/d" .env
-                    sed -i "/CURRENT_GID/d" .env
-            - run:
                 name: 'Install Composer Dependencies'
                 command: |
                     composer install
