@@ -7,6 +7,10 @@ jobs:
         steps:
             - checkout
             - run:
+                name: 'Setup environment'
+                command: |
+                    cp .env.dist .env
+            - run:
                 name: 'Install Composer Dependencies'
                 command: |
                     composer install
