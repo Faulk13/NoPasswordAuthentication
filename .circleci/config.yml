@@ -3,7 +3,7 @@ jobs:
     build:
         working_directory: '~/workspace'
         docker:
-            - image: 'php:7.2-apache'
+            - image: 'circleci/php:7.2'
         steps:
             - run:
                 name: 'Install Composer Dependencies'
