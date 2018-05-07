@@ -23,7 +23,7 @@ two:
         - attach_workspace:
             at: my_workspace
 
-        -run: |
+        - run: |
             if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
                 echo "It worked!";
             else
