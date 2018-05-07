@@ -14,21 +14,21 @@ jobs:
             # Must be relative path from root
             paths:
                 - echo-output
-two:
-    docker:
-        - image: circleci/ruby:2.4.1
-    steps:
-        - checkout
-        - run: echo "A more familiar hi"
-        - attach_workspace:
-            at: my_workspace
+    two:
+        docker:
+            - image: circleci/ruby:2.4.1
+        steps:
+            - checkout
+            - run: echo "A more familiar hi"
+            - attach_workspace:
+                at: my_workspace
 
-        - run: |
-            if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
-                echo "It worked!";
-            else
-                echo "Nope!"; exit 1
-            fi
+            - run: |
+                if [[ $(cat my_workspace/echo-output) == "Trying out workspaces" ]]; then
+                    echo "It worked!";
+                else
+                    echo "Nope!"; exit 1
+                fi
 
 workflows:
     version: 2
