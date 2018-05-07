@@ -1,11 +1,12 @@
 version: 2
 jobs:
     build:
+        working_directory: '~/workspace'
         docker:
-            - image: php:7.2-apache
+            - image: 'php:7.2-apache'
         steps:
             - run:
-                name: Run Composer install
+                name: 'Install Composer Dependencies'
                 command: |
                     composer install
 
