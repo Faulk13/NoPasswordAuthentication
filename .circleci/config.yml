@@ -1,9 +1,17 @@
 version: 2
 jobs:
     build:
+        working_directory: '~/workspace'
         docker:
             - image: 'circleci/php:7.2'
         steps:
+            - checkout
+            - run:
+                name: 'Setup environment'
+                command: |
+                    cp .env.dist .env
+                    sed -i "/CURRENT_UID/d" .env
+                    sed -i "/CURRENT_GID/d" .env
             - run:
                 name: 'Install Composer Dependencies'
                 command: |
